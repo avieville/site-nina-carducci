@@ -35,14 +35,10 @@
 		rel="stylesheet">
 	<link rel="canonical" href="https://avieville.github.io/site-nina-carducci/" />
 	<link rel="icon" type="image/x-icon" href="./assets/images/camera.ico" />
-	
-	<script src="./assets/bootstrap/bootstrap.bundle.min.js" defer></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"  ></script>
-	<script src="./assets/maugallery.js"  ></script>
-	<script src="./assets/scripts.js"  ></script>
 
-	<script type='application/ld+json' defer >
+	<script src="./assets/bootstrap/bootstrap.bundle.min.js" defer></script>
+	<script src="./gallery.js" defer></script>
+	<script type='application/ld+json' defer>
 		{
 		  "@context": "http://www.schema.org",
 		  "@type": "LocalBusiness",
@@ -75,14 +71,14 @@
 				<li><a href="#services">Service</a></li>
 				<li><a href="#contact">Contact</a></li>
 				<li><a class="social-link" href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
-						target="_blank"><img 
-						srcset="./assets/images/mobile/instagram-mobile.png 650w, ./assets/images/instagram.png 1920w"
-						sizes="(max-width: 650px) 650w, 1920w"
-						src="assets/images/instagram.png" alt="logo instagram"></a></li>
+						target="_blank"><img
+							srcset="./assets/images/mobile/instagram-mobile.png 650w, ./assets/images/instagram.png 1920w"
+							sizes="(max-width: 650px) 650w, 1920w" src="assets/images/instagram.png"
+							alt="logo instagram"></a></li>
 			</ul>
 		</nav>
 	</header>
-	
+
 	<div id="header">
 
 		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -125,7 +121,6 @@
 	</div>
 	<section id="about">
 
-
 		<div class="picture left">
 			<img srcset="./assets/images/mobile/nina-mobile.webp 650w, ./assets/images/nina.webp 1920w"
 				sizes="(max-width: 650px) 650w, 1920w" src="./assets/images/nina.webp" alt="Nina Carducci">
@@ -147,47 +142,74 @@
 	<section id="gallery">
 		<h2 class="title">Portfolio</h2>
 		<div class="container py-3">
-			<div class="gallery" style="display: none">
-				<img data-gallery-tag="Concert" class="gallery-item"
-					src="./assets/images/gallery/concerts/aaron-paul.webp"
-					alt="vue de la scène d'un concert depuis la foule" />
-				<img data-gallery-tag="Entreprises" class="gallery-item"
-					src="./assets/images/gallery/entreprise/ali-morshedlou.webp"
-					alt="homme en costume" />
-				<img data-gallery-tag="Entreprises" class="gallery-item"
-					src="./assets/images/gallery/entreprise/jason-goodman.webp"
-					alt="deux femmes souriantes" />
-				<img data-gallery-tag="Mariages" class="gallery-item"
-					src="./assets/images/gallery/mariage/hannah-busing.webp"
-					alt="gros plan sur des mains, les doigts d'une personne touchent les doigts d'une autre" />
-				<img data-gallery-tag="Portrait" class="gallery-item"
-					src="./assets/images/gallery/portraits/ade-tunji.webp"
-					alt="visage d'un homme avec les yeux fermés" />
-				<img data-gallery-tag="Mariages" class="gallery-item"
-					src="./assets/images/gallery/mariage/jakob-owens.webp"
-					alt="jeunes mariés qui se regardent avec un palmier en second plan" />
-				<img data-gallery-tag="Portrait" class="gallery-item"
-					src="./assets/images/gallery/portraits/nino-van-prattenburg.webp"
-					alt="femme avec des lunettes se carressant les cheveux" />
-				<img data-gallery-tag="Concert" class="gallery-item"
-					src="./assets/images/gallery/concerts/austin-neill.webp"
-					alt="artiste sur scène en train de chanter" />
-				<img data-gallery-tag="Entreprises" class="gallery-item"
-					src="./assets/images/gallery/entreprise/mateus-campos-felipe.webp"
-					alt="femme devant un ordinateur regardant sur le côté en souriant" />
-			</div>
-		</div>
-		<div class="quote">
-			<figure>
-				<blockquote>
-					<p class="quote__text">Un portrait n’est pas une ressemblance. Dès lors qu’une émotion ou qu’un fait
-						est traduit en photo, il cesse d’être un fait pour devenir une opinion. L’inexactitude n’existe
-						pas en photographie. Toutes les photos sont exactes. Aucune d’elles n’est la vérité.</p>
-				</blockquote>
-				<figcaption class="quote__author">- Richard Avedon</figcaption>
-			</figure>
-		</div>
+
+			<div class="gallery">
+
+				<ul class="my-4 tags-bar nav nav-pills" id="filters">
+					<li><span class="nav-link active" id="all">Tous</span></li>
+					<li><span class="nav-link" id="concert">Concert</span></li>
+					<li><span class="nav-link" id="entreprises">Entreprises</span></li>
+					<li><span class="nav-link" id="mariages">Mariages</span></li>
+					<li><span class="nav-link" id="portrait">Portrait</span>
+				</ul>
+
+				<div class="gallery-items-row row" id="gallery-items">
+
+					<img data-concert class="gallery-item-active "
+						src="./assets/images/gallery/concerts/aaron-paul.webp"
+						alt="vue de la scène d'un concert depuis la foule" />
+					<img data-entreprises class="gallery-item-active"
+						src="./assets/images/gallery/entreprise/ali-morshedlou.webp" alt="homme en costume" />
+					<img data-entreprises class="gallery-item-active "
+						src="./assets/images/gallery/entreprise/jason-goodman.webp" alt="deux femmes souriantes" />
+					<img data-mariages class="gallery-item-active"
+						src="./assets/images/gallery/mariage/hannah-busing.webp"
+						alt="gros plan sur des mains, les doigts d'une personne touchent les doigts d'une autre" />
+					<img data-portrait class="gallery-item-active"
+						src="./assets/images/gallery/portraits/ade-tunji.webp"
+						alt="visage d'un homme avec les yeux fermés" />
+					<img data-mariages class="gallery-item-active"
+						src="./assets/images/gallery/mariage/jakob-owens.webp"
+						alt="jeunes mariés qui se regardent avec un palmier en second plan" />
+					<img data-portrait class="gallery-item-active"
+						src="./assets/images/gallery/portraits/nino-van-prattenburg.webp"
+						alt="femme avec des lunettes se carressant les cheveux" />
+					<img data-concert class="gallery-item-active"
+						src="./assets/images/gallery/concerts/austin-neill.webp"
+						alt="artiste sur scène en train de chanter" />
+					<img data-entreprises class="gallery-item-active"
+						src="./assets/images/gallery/entreprise/mateus-campos-felipe.webp"
+						alt="femme devant un ordinateur regardant sur le côté en souriant" />
+
+				</div>
+
+				<div class="gallery-modal" id="modal">
+					<div class="gallery-modal-content ">
+						<div class="gallery-modal-body">
+							<img src="./assets/images/gallery/entreprise/ali-morshedlou.webp" alt="homme en costume"
+								id="modal-image" />
+							<div class="gallery-modal-prev" id="modal-prev"><</div>
+									<div class="gallery-modal-next" id="modal-next">></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="quote">
+					<figure>
+						<blockquote>
+							<p class="quote__text">Un portrait n’est pas une ressemblance. Dès lors qu’une émotion ou
+								qu’un
+								fait
+								est traduit en photo, il cesse d’être un fait pour devenir une opinion. L’inexactitude
+								n’existe
+								pas en photographie. Toutes les photos sont exactes. Aucune d’elles n’est la vérité.</p>
+						</blockquote>
+						<figcaption class="quote__author">- Richard Avedon</figcaption>
+					</figure>
+				</div>
 	</section>
+
 	<section id="services">
 		<h2 class="title">Mes services</h2>
 		<div class="container">
