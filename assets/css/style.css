@@ -46,6 +46,12 @@ body {
 
 .social-link img {
 	width: 20px;
+	height: 20px;
+}
+
+.carousel-item img {
+	height: 100%;
+	width: 100%;
 }
 
 #about {
@@ -75,7 +81,6 @@ body {
 
 .picture img {
 	width: 100%;
-
 }
 
 #about-me {
@@ -199,6 +204,11 @@ body {
 	border-radius: .3rem;
 	outline: 0;
 	padding: 1rem;
+}
+
+.gallery-modal-body img {
+	height: 100%;
+	width: 100%;
 }
 
 

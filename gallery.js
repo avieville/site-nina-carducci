@@ -48,7 +48,7 @@ images.forEach((image) => {
     modal.classList.add("show");
     const scrollbarWidth =
       window.innerWidth - document.documentElement.clientWidth;
-    document.body.style.marginRight = scrollbarWidth + "px";
+    document.body.style.paddingRight = scrollbarWidth + "px";
     document.body.classList.add("hide-overflow");
   });
 });
@@ -56,7 +56,7 @@ images.forEach((image) => {
 modal.addEventListener("click", function () {
   modal.classList.remove("show");
   document.body.classList.remove("hide-overflow");
-  document.body.style.marginRight = "0";
+  document.body.style.paddingRight = 0;
 });
 
 modal.children[0].addEventListener("click", function (e) {
